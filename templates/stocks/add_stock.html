@@ -1,0 +1,32 @@
+{% extends "base.html" %} {% block content %}
+
+<header class="form-group col-7">
+    <h1>Add stock</h1>
+</header>
+
+<section class="create-stock-form container">
+    <form method="post">
+        <div class="form-group">
+            <label for="stock_symbol">Stock Symbol</label>
+            <input class="form-control col-7 mdb-autocomplete" type="text" name="stock_symbol" id="stock_symbol"
+                   placeholder="NVDA"/>
+        </div>
+
+        <div class="form-group">
+            <label for="purchase_price">Purchase Price ($)</label>
+            <input class="form-control col-7" type="text" name="purchase_price" id="purchase_price"/>
+        </div>
+
+        <div class="form-group">
+            <label for="num_of_shares">Number of Shares</label>
+            <input class="form-control col-7" type="text" name="num_of_shares" id="num_of_shares"
+                   placeholder="Enter number of shares"/>
+        </div>
+
+        <button type="submit" class="btn btn-dark">
+            Create
+        </button>
+    </form>
+</section>
+
+{% endblock content %}

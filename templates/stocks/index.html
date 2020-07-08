@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+<section id="stocks-table">
+    <table class="table table-bordered table-hover">
+        <thead class="thead-dark">
+        <tr>
+            <th scope="col">Stock</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Value ($)</th>
+            <th scope="col">Profit/Loss ($)</th>
+            <th scope="col">Change from buy (%)</th>
+        </tr>
+        </thead>
+
+        {% for stock in stocks %}
+        <tbody>
+        <tr>
+            {% set stock_data = stock.get_stock_data() %}
+            {% set stock_yield = Stock.get_yield_of_single_stock(stock) %}
+
+            {% set profit_prec = stock_yield['profit_prec'] %}
+            {% set profit_in_usd = stock_yield['profit_in_usd'] %}
+
+            <td>{{ stock_data['full_name'] }}</td>
+            <td>{{ stock_data['shares'] }}</td>
+            <td>{{ stock_yield['total_value'] }}</td>
+
+            <td class="val">{{ '$+' + profit_in_usd|string if profit_in_usd > 0 else '$' + profit_in_usd|string }}</td>
+            <td class="val">{{ '$+' + profit_prec|string if profit_prec > 0 else '$' + profit_prec|string }}</td>
+        </tr>
+        </tbody>
+        {% endfor %}
+
+
+        <tr class="table-info">
+            <td>Total</td>
+            <td>{{ total.quantity }}</td>
+            <td>{{ total.value }}</td>
+            <td class="val">{{ '$+' + total.profit_loss|string if total.profit_loss > 0 else '$' +
+                total.profit_loss|string }}
+            </td>
+            <td>-</td>
+        </tr>
+
+    </table>
+
+    <!-- ;;;MODAL MODAL MODAL;;; -->
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
+        Add Stock
+    </button>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Add new stock</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <section class="create-stock-form container">
+                        <form action="form" method="post">
+                            <div class="form-group">
+                                <label for="stock_symbol">Stock Symbol</label>
+                                <input class="form-control col-7 mdb-autocomplete" type="text" name="stock_symbol"
+                                       id="stock_symbol" placeholder="NVDA"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="purchase_price">Purchase Price ($)</label>
+                                <input class="form-control col-7" type="text" name="purchase_price"
+                                       id="purchase_price"/>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="num_of_shares">Number of Shares</label>
+                                <input class="form-control col-7" type="text" name="num_of_shares" id="num_of_shares"
+                                       placeholder="Enter number of shares"/>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-dark">
+                                    Create
+                                </button>
+                            </div>
+
+                        </form>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</section>
+
+{% endblock content %}

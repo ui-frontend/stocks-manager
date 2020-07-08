@@ -1,0 +1,15 @@
+td.red {
+  color: #ff4232;
+}
+
+td.green {
+  color: #6eba51;
+}
+
+#stocks-table {
+  margin-top: 54px;
+}
+
+#total {
+  color: #6eba51;
+}
