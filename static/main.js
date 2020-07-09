@@ -1,8 +1,8 @@
-// $(document).ready( function() {
-//
-//   $("td.val:contains('-')").addClass('red');
-//   $("td.val:contains('+')").addClass('green');
-// });
+$(document).ready( function() {
+
+  $("td.val:contains('-')").addClass('r');
+  $("td.val:contains('+')").addClass('g');
+});
 
   document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('.modal');

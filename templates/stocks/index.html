@@ -3,7 +3,7 @@
 
 
 <section id="stocks-table">
-    <table class="highlight">
+    <table class="highlight centered">
         <thead class="thead-dark">
         <tr>
             <th scope="col">Stock</th>
@@ -28,7 +28,7 @@
             <td>{{ stock_yield['total_value'] }}</td>
 
             <td class="val">{{ '$+' + profit_in_usd|string if profit_in_usd > 0 else '$' + profit_in_usd|string }}</td>
-            <td class="val">{{ profit_prec|string + '%' }}</td>
+            <td class="val">{{ '+' + profit_prec|string + '%' if profit_prec > 0 else profit_prec|string + '%'}}</td>
         </tr>
         </tbody>
         {% endfor %}
@@ -48,7 +48,10 @@
 
 
     <!-- Modal Trigger -->
-    <button data-target="modal1" class="btn modal-trigger">Add stock</button>
+
+    <div class="section right-align">
+        <button data-target="modal1" class="btn modal-trigger section">Add stock</button>
+    </div>
 
     <!-- Modal Structure -->
     <div id="modal1" class="modal">
@@ -68,22 +71,21 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="material-icons prefix">show_chart</i>
-                                                <input type="text" class="autocomplete" , id="stock_symbol"
-                                                       name="stock_symbol"/>
-                                                <label for="stock_symbol">Stock Symbol</label>
+                                                {{ form.stock_symbol.label() }}
+                                                {{ form.stock_symbol(class="autocomplete") }}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+
 
                                 <div class="row">
                                     <div class="col s12">
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="material-icons prefix">attach_money</i>
-                                                <input type="text" class="autocomplete" , id="purchase_price"
-                                                       name="purchase_price"/>
-                                                <label for="purchase_price">Purchase Price ($)</label>
+                                                {{ form.purchase_price.label() }}
+                                                {{ form.purchase_price() }}
                                             </div>
                                         </div>
                                     </div>
@@ -95,9 +97,8 @@
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="material-icons prefix">bookmark_border</i>
-                                                <input type="text" class="autocomplete" , id="num_of_shares"
-                                                       name="num_of_shares"/>
-                                                <label for="num_of_shares">Number of Shares</label>
+                                                {{ form.num_of_shares.label() }}
+                                                {{ form.num_of_shares() }}
                                             </div>
                                         </div>
                                     </div>
@@ -109,7 +110,7 @@
                                     <button type="button" class="modal-close waves-effect waves-green btn-flat"
                                             href="#!" data-dismiss="modal">Close
                                     </button>
-                                    <button type="submit" class="btn btn-dark">
+                                    <button type="submit" class="btn">
                                         Create
                                     </button>
                                 </div>
