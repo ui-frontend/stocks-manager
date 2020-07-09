@@ -3,9 +3,10 @@
 
 
 <section id="stocks-table">
-    <table class="highlight centered">
+    <table class="highlight">
         <thead class="thead-dark">
         <tr>
+            <th scope="col"></th>
             <th scope="col">Stock</th>
             <th scope="col">Quantity</th>
             <th scope="col">Value ($)</th>
@@ -23,6 +24,7 @@
             {% set profit_prec = stock_yield['profit_prec'] %}
             {% set profit_in_usd = stock_yield['profit_in_usd'] %}
 
+            <td><img class="responsive-img circle" src="{{ stock_data['logo'] }}" alt=""></td>
             <td>{{ stock_data['full_name'] }}</td>
             <td>{{ stock_data['shares'] }}</td>
             <td>{{ stock_yield['total_value'] }}</td>
@@ -34,7 +36,8 @@
         {% endfor %}
 
 
-        <tr class="table-info">
+        <tr class="table-info teal lighten-5">
+            <td></td>
             <td>Total</td>
             <td>{{ total.quantity }}</td>
             <td>{{ total.value }}</td>

@@ -36,7 +36,8 @@ class Stock:
                     stock_symbol=stock_symbol,
                     shares=float(self.number_of_shares),
                     purchase_price=float(self.purchase_price),
-                    net_buy_price=round(float(self.number_of_shares) * float(self.purchase_price), 2)
+                    net_buy_price=round(float(self.number_of_shares) * float(self.purchase_price), 2),
+                    logo = yf.Ticker(stock_symbol).info['logo_url']
                 )
 
     def get_stock_data(self) -> Dict:
@@ -82,7 +83,10 @@ class Stock:
 
     @classmethod
     def get_total(cls):
-        total = dict(quantity=0, value=0, profit_loss=0)
+
+        quantity = 0
+        value = 0
+        profit_loss = 0
 
         stocks = Stock.get_all_stocks()
         for stock in stocks:
@@ -90,12 +94,12 @@ class Stock:
             stock_data = stock.get_stock_data()
             stock_yeild = stock.get_yield_of_single_stock(stock)
 
-            total['quantity'] += stock_data['shares']
-            total['value'] += round(stock_yeild['total_value'], 1)
-            total['profit_loss'] += stock_yeild['profit_in_usd']
+            quantity += stock_data['shares']
+            value += stock_yeild['total_value']
+            profit_loss += stock_yeild['profit_in_usd']
 
-        return total
 
+        return dict(quantity=round(quantity, 2), value=round(value, 2), profit_loss=round(profit_loss, 2))
 
 
 """
@@ -112,16 +116,10 @@ get_total()
 
 # tickers = Stock._load_all_tickers()
 #
-# d = {}
 #
 # for ticker in tickers:
 #     ticker = ticker['symbol']
-#     try:
-#         url = yf.Ticker(ticker).info['logo_url']
-#         d[ticker] = url
-#         print(f'"{ticker}": "{url}"')
-#     except:
-#         pass
-#
+#     print(f'"{ticker}": null,')
+
 
 
