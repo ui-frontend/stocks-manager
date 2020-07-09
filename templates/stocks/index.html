@@ -3,7 +3,7 @@
 
 
 <section id="stocks-table">
-    <table class="table table-bordered table-hover">
+    <table class="highlight">
         <thead class="thead-dark">
         <tr>
             <th scope="col">Stock</th>
@@ -28,7 +28,7 @@
             <td>{{ stock_yield['total_value'] }}</td>
 
             <td class="val">{{ '$+' + profit_in_usd|string if profit_in_usd > 0 else '$' + profit_in_usd|string }}</td>
-            <td class="val">{{ '$+' + profit_prec|string if profit_prec > 0 else '$' + profit_prec|string }}</td>
+            <td class="val">{{ profit_prec|string + '%' }}</td>
         </tr>
         </tbody>
         {% endfor %}
@@ -46,58 +46,81 @@
 
     </table>
 
-    <!-- ;;;MODAL MODAL MODAL;;; -->
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#exampleModal">
-        Add Stock
-    </button>
 
-    <!-- Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-         aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Add new stock</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <section class="create-stock-form container">
-                        <form action="form" method="post">
-                            <div class="form-group">
-                                <label for="stock_symbol">Stock Symbol</label>
-                                <input class="form-control col-7 mdb-autocomplete" type="text" name="stock_symbol"
-                                       id="stock_symbol" placeholder="NVDA"/>
-                            </div>
+    <!-- Modal Trigger -->
+    <button data-target="modal1" class="btn modal-trigger">Add stock</button>
 
-                            <div class="form-group">
-                                <label for="purchase_price">Purchase Price ($)</label>
-                                <input class="form-control col-7" type="text" name="purchase_price"
-                                       id="purchase_price"/>
-                            </div>
+    <!-- Modal Structure -->
+    <div id="modal1" class="modal">
+        <div class="modal-content">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Add new stock</h5>
+                    </div>
+                    <div class="modal-body">
+                        <section class="create-stock-form container">
 
-                            <div class="form-group">
-                                <label for="num_of_shares">Number of Shares</label>
-                                <input class="form-control col-7" type="text" name="num_of_shares" id="num_of_shares"
-                                       placeholder="Enter number of shares"/>
-                            </div>
+                            <form action="add_stock" method="post">
 
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                <button type="submit" class="btn btn-dark">
-                                    Create
-                                </button>
-                            </div>
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">show_chart</i>
+                                                <input type="text" class="autocomplete" , id="stock_symbol"
+                                                       name="stock_symbol"/>
+                                                <label for="stock_symbol">Stock Symbol</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                        </form>
-                    </section>
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">attach_money</i>
+                                                <input type="text" class="autocomplete" , id="purchase_price"
+                                                       name="purchase_price"/>
+                                                <label for="purchase_price">Purchase Price ($)</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="row">
+                                    <div class="col s12">
+                                        <div class="row">
+                                            <div class="input-field col s12">
+                                                <i class="material-icons prefix">bookmark_border</i>
+                                                <input type="text" class="autocomplete" , id="num_of_shares"
+                                                       name="num_of_shares"/>
+                                                <label for="num_of_shares">Number of Shares</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="modal-footer">
+
+                                    <button type="button" class="modal-close waves-effect waves-green btn-flat"
+                                            href="#!" data-dismiss="modal">Close
+                                    </button>
+                                    <button type="submit" class="btn btn-dark">
+                                        Create
+                                    </button>
+                                </div>
+
+                            </form>
+                        </section>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 
-</section>
 
-{% endblock content %}
+    {% endblock content %}

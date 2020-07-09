@@ -103,9 +103,25 @@ get_stock_data():
 {'_id': '111e6c5af2254e2585b03dfbdb51bf91', 'full_name': 'NVIDIA Corporation', 'stock_symbol': 'NVDA', 'shares': 12.0, 'purchase_price': 334.0, 'net_buy_price': 4008.0}
 
 get_yield_of_single_stock()
-{'symbol': 'NVDA', 'profit_in_usd': 730.44, 'profit_prec': 18.22, 'total_value': 4738.44}
+{'symbol': 'NVDA', 'profit_in_ usd': 730.44, 'profit_prec': 18.22, 'total_value': 4738.44}
 
 get_total()
 {'quantity': 12.0, 'value': 4008.0, 'profit_loss': 730.44}
 """
+
+
+# tickers = Stock._load_all_tickers()
+#
+# d = {}
+#
+# for ticker in tickers:
+#     ticker = ticker['symbol']
+#     try:
+#         url = yf.Ticker(ticker).info['logo_url']
+#         d[ticker] = url
+#         print(f'"{ticker}": "{url}"')
+#     except:
+#         pass
+#
+
 
