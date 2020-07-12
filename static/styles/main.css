@@ -13,3 +13,25 @@ td.val.g {
 img {
     width: 16%
 }
+
+i.icon-red {
+    color: #ed4345;
+}
+
+
+/*i.icon-red {*/
+/*    display: none;*/
+/*}*/
+
+/*.content-row:hover .icon-red {*/
+/*    display: block;*/
+/*}*/
+
+
+i.icon-red {
+    display: none;
+}
+
+.content-row:hover .icon-red {
+    display: block;
+}

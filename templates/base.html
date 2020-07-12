@@ -4,7 +4,8 @@
     <link/>
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/materialize.css') }}" media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename='styles/materialize.css') }}"
+          media="screen,projection"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -15,12 +16,12 @@
 </head>
 <body>
 
-
 <nav>
     <div class="nav-wrapper teal">
-        <a href="#" class="brand-logo">Stock Portfolio Manager</a>
+        <a href="#" class="brand-logo container">Stock Portfolio Manager</a>
     </div>
 </nav>
+
 
 <div class="content container">
     {% block content %} {% endblock content %}
@@ -31,3 +32,5 @@
 
 </body>
 </html>
+
+

@@ -15,13 +15,23 @@ class Stock:
         self.number_of_shares = number_of_shares
         self.purchase_price = purchase_price
         self.tickers = list(self._load_all_tickers())
+        self.logos = list(self._load_all_logos())
         self.stock_data = self._add_stock(stock_symbol)
 
     def save_to_mongo(self):
         StockDatabase.insert(self.collection, self.get_stock_data())
 
-    def remove_from_mongo(self):
-        StockDatabase.remove(self.collection, self.json())
+    # def remove_from_mongo(self):
+    #     StockDatabase.remove(self.collection, self.json())
+
+
+    def remove_from_mongo(id):
+        StockDatabase.remove('stocks', id)
+
+    def get_logo_url(self, stock_symbol):
+        for logo in self.logos:
+            if logo['company'] == stock_symbol:
+                return logo['logo']
 
     def _add_stock(self, stock_symbol) -> Dict:
         stock_symbol = stock_symbol.upper()
@@ -37,7 +47,7 @@ class Stock:
                     shares=float(self.number_of_shares),
                     purchase_price=float(self.purchase_price),
                     net_buy_price=round(float(self.number_of_shares) * float(self.purchase_price), 2),
-                    logo = yf.Ticker(stock_symbol).info['logo_url']
+                    logo=self.get_logo_url(stock_symbol)
                 )
 
     def get_stock_data(self) -> Dict:
@@ -51,6 +61,13 @@ class Stock:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for i in csv_reader:
                 yield dict(company=i[0], symbol=i[1])
+
+    @staticmethod
+    def _load_all_logos():
+        with open('logo.csv') as csv_file:
+            csv_reader = csv.reader(csv_file, delimiter=',')
+            for i in csv_reader:
+                yield dict(company=i[0], logo=i[1])
 
     @staticmethod
     def get_current_stock_price_by_symbol(stock_symbol) -> float:
@@ -79,7 +96,8 @@ class Stock:
     def get_all_stocks(cls) -> List:
         """return a list of class objects"""
         db_stocks = StockDatabase.find('stocks', {})
-        return [cls(stock['stock_symbol'], stock['shares'], stock['purchase_price'], stock['_id']) for stock in db_stocks]
+        return [cls(stock['stock_symbol'], stock['shares'], stock['purchase_price'], stock['_id']) for stock in
+                db_stocks]
 
     @classmethod
     def get_total(cls):
@@ -90,14 +108,12 @@ class Stock:
 
         stocks = Stock.get_all_stocks()
         for stock in stocks:
-
             stock_data = stock.get_stock_data()
             stock_yeild = stock.get_yield_of_single_stock(stock)
 
             quantity += stock_data['shares']
             value += stock_yeild['total_value']
             profit_loss += stock_yeild['profit_in_usd']
-
 
         return dict(quantity=round(quantity, 2), value=round(value, 2), profit_loss=round(profit_loss, 2))
 
@@ -113,13 +129,8 @@ get_total()
 {'quantity': 12.0, 'value': 4008.0, 'profit_loss': 730.44}
 """
 
+# a = Stock('nvda', 23, 23)
+# print(a.logos)
+# print(a.get_logo_url('AMZN'))
 
-# tickers = Stock._load_all_tickers()
-#
-#
-# for ticker in tickers:
-#     ticker = ticker['symbol']
-#     print(f'"{ticker}": null,')
-
-
-
+# Stock.remove_from_mongo('127b787a4c284e688587bad87e94dd3c')

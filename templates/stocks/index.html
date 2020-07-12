@@ -12,25 +12,36 @@
             <th scope="col">Value ($)</th>
             <th scope="col">Profit/Loss ($)</th>
             <th scope="col">Change from buy (%)</th>
+            <th scope="col">Action</th>
+
         </tr>
         </thead>
 
         {% for stock in stocks %}
         <tbody>
-        <tr>
+        <tr class="content-row">
             {% set stock_data = stock.get_stock_data() %}
             {% set stock_yield = Stock.get_yield_of_single_stock(stock) %}
 
             {% set profit_prec = stock_yield['profit_prec'] %}
             {% set profit_in_usd = stock_yield['profit_in_usd'] %}
 
-            <td><img class="responsive-img circle" src="{{ stock_data['logo'] }}" alt=""></td>
+            <td><img class="responsive-img" src='{{ stock_data["logo"] }}' alt=""></td>
             <td>{{ stock_data['full_name'] }}</td>
             <td>{{ stock_data['shares'] }}</td>
             <td>{{ stock_yield['total_value'] }}</td>
 
             <td class="val">{{ '$+' + profit_in_usd|string if profit_in_usd > 0 else '$' + profit_in_usd|string }}</td>
             <td class="val">{{ '+' + profit_prec|string + '%' if profit_prec > 0 else profit_prec|string + '%'}}</td>
+
+            <form action="remove_stock" method="POST">
+                <input type="hidden" name="stock_id" value="{{ stock_data['_id'] }}">
+                <td class="val">
+                    <button type="submit" action="remove_stock">
+                        <i class="material-icons prefix icon-red">delete</i>
+                    </button>
+                </td>
+            </form>
         </tr>
         </tbody>
         {% endfor %}
@@ -45,6 +56,7 @@
                 total.profit_loss|string }}
             </td>
             <td>-</td>
+            <td></td>
         </tr>
 
     </table>
@@ -126,5 +138,5 @@
         </div>
     </div>
 
-
-    {% endblock content %}
+</section>
+{% endblock content %}
