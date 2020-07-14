@@ -1,7 +1,7 @@
-{% extends "base.html" %}
-{% block content %}
+{% extends "base.html" %} {% block content %}
 
 
+{% if stocks|length > 0 %}
 <section id="stocks-table">
     <table class="highlight">
         <thead class="thead-dark">
@@ -12,21 +12,17 @@
             <th scope="col">Value ($)</th>
             <th scope="col">Profit/Loss ($)</th>
             <th scope="col">Change from buy (%)</th>
-            <th scope="col">Action</th>
-
+            <th scope="col" class="action">Action</th>
         </tr>
         </thead>
 
         {% for stock in stocks %}
         <tbody>
         <tr class="content-row">
-            {% set stock_data = stock.get_stock_data() %}
-            {% set stock_yield = Stock.get_yield_of_single_stock(stock) %}
+            {% set stock_data = stock.get_stock_data() %} {% set stock_yield = Stock.get_yield_of_single_stock(stock) %}
+            {% set profit_prec = stock_yield['profit_prec'] %} {% set profit_in_usd = stock_yield['profit_in_usd'] %}
 
-            {% set profit_prec = stock_yield['profit_prec'] %}
-            {% set profit_in_usd = stock_yield['profit_in_usd'] %}
-
-            <td><img class="responsive-img" src='{{ stock_data["logo"] }}' alt=""></td>
+            <td><img class="responsive-img" src='{{ stock_data["logo"] }}' alt=""/></td>
             <td>{{ stock_data['full_name'] }}</td>
             <td>{{ stock_data['shares'] }}</td>
             <td>{{ stock_yield['total_value'] }}</td>
@@ -34,10 +30,10 @@
             <td class="val">{{ '$+' + profit_in_usd|string if profit_in_usd > 0 else '$' + profit_in_usd|string }}</td>
             <td class="val">{{ '+' + profit_prec|string + '%' if profit_prec > 0 else profit_prec|string + '%'}}</td>
 
-            <form action="remove_stock" method="POST">
-                <input type="hidden" name="stock_id" value="{{ stock_data['_id'] }}">
+            <form class="del_form" action="remove_stock" method="POST">
+                <input type="hidden" name="stock_id" value="{{ stock_data['_id'] }}"/>
                 <td class="val">
-                    <button type="submit" action="remove_stock">
+                    <button id="delete-btn" type="submit" action="remove_stock">
                         <i class="material-icons prefix icon-red">delete</i>
                     </button>
                 </td>
@@ -47,7 +43,7 @@
         {% endfor %}
 
 
-        <tr class="table-info teal lighten-5">
+        <tr class="table-info blue-grey darken-3 total">
             <td></td>
             <td>Total</td>
             <td>{{ total.quantity }}</td>
@@ -61,6 +57,13 @@
 
     </table>
 
+    {% else %}
+    <blockquote>
+        <h1 class="col s12 m10 offset-m1">Add stocks to start</h1>
+    </blockquote>
+
+
+    {% endif %}
 
     <!-- Modal Trigger -->
 
@@ -78,50 +81,42 @@
                     </div>
                     <div class="modal-body">
                         <section class="create-stock-form container">
-
                             <form action="add_stock" method="post">
-
                                 <div class="row">
                                     <div class="col s12">
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="material-icons prefix">show_chart</i>
-                                                {{ form.stock_symbol.label() }}
-                                                {{ form.stock_symbol(class="autocomplete") }}
+                                                {{ form.stock_symbol.label() }} {{
+                                                form.stock_symbol(class="autocomplete") }}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
 
                                 <div class="row">
                                     <div class="col s12">
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="material-icons prefix">attach_money</i>
-                                                {{ form.purchase_price.label() }}
-                                                {{ form.purchase_price() }}
+                                                {{ form.purchase_price.label() }} {{ form.purchase_price() }}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
 
                                 <div class="row">
                                     <div class="col s12">
                                         <div class="row">
                                             <div class="input-field col s12">
                                                 <i class="material-icons prefix">bookmark_border</i>
-                                                {{ form.num_of_shares.label() }}
-                                                {{ form.num_of_shares() }}
+                                                {{ form.num_of_shares.label() }} {{ form.num_of_shares() }}
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-
                                 <div class="modal-footer">
-
                                     <button type="button" class="modal-close waves-effect waves-green btn-flat"
                                             href="#!" data-dismiss="modal">Close
                                     </button>
@@ -129,7 +124,6 @@
                                         Create
                                     </button>
                                 </div>
-
                             </form>
                         </section>
                     </div>
@@ -137,6 +131,5 @@
             </div>
         </div>
     </div>
-
 </section>
 {% endblock content %}

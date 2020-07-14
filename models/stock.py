@@ -21,9 +21,6 @@ class Stock:
     def save_to_mongo(self):
         StockDatabase.insert(self.collection, self.get_stock_data())
 
-    # def remove_from_mongo(self):
-    #     StockDatabase.remove(self.collection, self.json())
-
 
     def remove_from_mongo(id):
         StockDatabase.remove('stocks', id)
@@ -32,6 +29,9 @@ class Stock:
         for logo in self.logos:
             if logo['company'] == stock_symbol:
                 return logo['logo']
+
+        return 'https://cdn2.iconfinder.com/data/icons/growth-bar-vol-3/512/41-512.png'
+
 
     def _add_stock(self, stock_symbol) -> Dict:
         stock_symbol = stock_symbol.upper()
@@ -134,3 +134,6 @@ get_total()
 # print(a.get_logo_url('AMZN'))
 
 # Stock.remove_from_mongo('127b787a4c284e688587bad87e94dd3c')
+
+# a = Stock('nvda', 12, 12)
+# print(a.get_logo_url('AMZN'))

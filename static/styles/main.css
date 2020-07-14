@@ -3,29 +3,24 @@
 }
 
 td.val.r {
-    color: tomato;
+    color: #ef7156;
 }
 
 td.val.g {
-    color: #36be5a;
+    color: #00b35c;
 }
 
 img {
     width: 16%
 }
 
+/*td {*/
+/*    width: 18%;*/
+/*}*/
+
 i.icon-red {
     color: #ed4345;
 }
-
-
-/*i.icon-red {*/
-/*    display: none;*/
-/*}*/
-
-/*.content-row:hover .icon-red {*/
-/*    display: block;*/
-/*}*/
 
 
 i.icon-red {
@@ -34,4 +29,38 @@ i.icon-red {
 
 .content-row:hover .icon-red {
     display: block;
+}
+
+#delete-btn {
+    cursor: pointer
+}
+
+button {
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+body {
+    background-image: url('pexels-photo-1055297.jpeg');
+}
+
+button:active {
+    background-color: transparent;
+}
+
+blockquote {
+    margin-left: 100px;
+}
+
+.action {
+    color: transparent;
+}
+
+.total {
+    color: white;
+}
+
+td {
+    border-radius: 0;
 }

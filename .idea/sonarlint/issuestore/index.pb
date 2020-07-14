@@ -11,8 +11,6 @@ B
 tickers.csv,3/a/3a59db881986407dfeafb9050380e135490f8bf0
 ?
 views/stocks.py,d/0/d086d52b1329a6947f495d948a1f7e3d74c2e5c2
-O
-templates/stocks/add_stock.html,2/1/21b1348b8ce94726e4c5da1a26d873fcc841cb6c
 C
 templates/base.html,d/a/da7c237b85a69c00a9ab8c189bf63e22070fcac3
 >
