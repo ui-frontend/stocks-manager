@@ -3,10 +3,12 @@
 
     {% if stocks|length > 0 %}
         <section id="stocks-table">
-        <table class="highlight">
+
+        <table class="highlight card">
             <thead class="thead-dark">
             <tr>
                 <th scope="col"></th>
+                <th>Symbol</th>
                 <th scope="col">Stock</th>
                 <th scope="col">Quantity</th>
                 <th scope="col">Value ($)</th>
@@ -23,6 +25,7 @@
                     {% set profit_prec = stock_yield['profit_prec'] %} {% set profit_in_usd = stock_yield['profit_in_usd'] %}
 
                     <td><img class="responsive-img" src='{{ stock_data["logo"] }}' alt=""/></td>
+                    <td>{{ stock_data['stock_symbol'] }}</td>
                     <td>{{ stock_data['full_name'] }}</td>
                     <td>{{ stock_data['shares'] }}</td>
                     <td>{{ stock_yield['total_value'] }}</td>
@@ -46,6 +49,7 @@
             <tr class="table-info blue-grey darken-3 total">
                 <td></td>
                 <td>Total</td>
+                <td></td>
                 <td>{{ total.quantity }}</td>
                 <td>{{ total.value }}</td>
                 <td class="val">{{ '$+' + total.profit_loss|string if total.profit_loss > 0 else '$' +
@@ -61,8 +65,6 @@
         <blockquote>
             <h1 class="col s12 m10 offset-m1">Add stocks to start</h1>
         </blockquote>
-
-
     {% endif %}
 
 <!-- Modal Trigger -->

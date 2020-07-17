@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for
 from models.stock import Stock
-from forms.forms import RegistrationsForm, AddStockForm
+from forms.forms import RegistrationsForm, AddStockForm, LoginForm
 
 stocks_blueprint = Blueprint('stocks', __name__)
 

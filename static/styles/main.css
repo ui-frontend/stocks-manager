@@ -62,10 +62,18 @@ td {
 }
 
 
-.form-card{
+.register-form-card {
     margin-right: 350px;
     margin-left: 350px;
-    height: 700px;
+    height: 690px;
+
+
+}
+
+.login-form-card {
+    margin-right: 350px;
+    margin-left: 350px;
+    height: 468px;
 }
 
 
@@ -80,6 +88,35 @@ hr {
 
 .card {
     /*background: #e3dcdf;*/
-    background: rgba(255, 255, 255, 0.9);
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 9px;
 }
 
+
+.register-form {
+    margin-top: 50px;
+}
+
+#stocks-table {
+    margin-top: 50px;
+}
+
+#login-btn {
+    width: 400px;
+}
+
+table {
+    border-collapse: separate;
+}
+
+.brand-logo {
+    margin-left: 50px;
+}
+
+#nav-mobile {
+    margin-right: 50px;
+}
+
+.form-head {
+    padding-top: 1px;
+}

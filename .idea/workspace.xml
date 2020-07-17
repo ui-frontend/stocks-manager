@@ -2,15 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7f6c87a-af6c-4b95-bd0d-a812818c470a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/database.py" beforeDir="false" afterPath="$PROJECT_DIR$/common/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/stock.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/stock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/static/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/pexels-photo-1055297.jpeg" beforeDir="false" afterPath="$PROJECT_DIR$/static/img/pexels-photo-1055297.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/stocks/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stocks/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/stocks/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stocks/login.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/stocks/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stocks/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/stocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/stocks.py" afterDir="false" />
     </list>
@@ -272,7 +268,7 @@
       <workItem from="1594711126775" duration="80000" />
       <workItem from="1594756480963" duration="1333000" />
       <workItem from="1594798683701" duration="1311000" />
-      <workItem from="1594800676623" duration="16029000" />
+      <workItem from="1594800676623" duration="20854000" />
     </task>
     <servers />
   </component>
