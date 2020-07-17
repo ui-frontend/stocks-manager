@@ -14,10 +14,6 @@ img {
     width: 16%
 }
 
-/*td {*/
-/*    width: 18%;*/
-/*}*/
-
 i.icon-red {
     color: #ed4345;
 }
@@ -42,7 +38,7 @@ button {
 }
 
 body {
-    background-image: url('pexels-photo-1055297.jpeg');
+    background-image: url('../img/pexels-photo-1055297.jpeg');
 }
 
 button:active {
@@ -64,3 +60,26 @@ blockquote {
 td {
     border-radius: 0;
 }
+
+
+.form-card{
+    margin-right: 350px;
+    margin-left: 350px;
+    height: 700px;
+}
+
+
+hr {
+    border: 0;
+    height: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.card {
+    /*background: #e3dcdf;*/
+    background: rgba(255, 255, 255, 0.9);
+}
+

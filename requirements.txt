@@ -1,5 +1,7 @@
+wtforms
 yfinance
 wallstreet
 flask_wtf
 flask
 pymongo
+email-validator

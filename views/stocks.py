@@ -31,13 +31,13 @@ def remove_stock():
         return redirect(url_for('stocks.index'))
 
 
-@stocks_blueprint.route('/register', methods=['POST'])
+@stocks_blueprint.route('/register', methods=['POST', 'GET'])
 def register():
     form = RegistrationsForm()
     return render_template('stocks/register.html', form=form)
 
 
-@stocks_blueprint.route('/login', methods=['POST'])
+@stocks_blueprint.route('/login', methods=['POST', 'GET'])
 def login():
     form = LoginForm()
     return render_template('stocks/login.html', form=form)

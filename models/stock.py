@@ -21,7 +21,6 @@ class Stock:
     def save_to_mongo(self):
         StockDatabase.insert(self.collection, self.get_stock_data())
 
-
     def remove_from_mongo(id):
         StockDatabase.remove('stocks', id)
 
@@ -31,7 +30,6 @@ class Stock:
                 return logo['logo']
 
         return 'https://cdn2.iconfinder.com/data/icons/growth-bar-vol-3/512/41-512.png'
-
 
     def _add_stock(self, stock_symbol) -> Dict:
         stock_symbol = stock_symbol.upper()
@@ -57,14 +55,14 @@ class Stock:
 
     @staticmethod
     def _load_all_tickers():
-        with open('tickers.csv') as csv_file:
+        with open('data/tickers.csv') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for i in csv_reader:
                 yield dict(company=i[0], symbol=i[1])
 
     @staticmethod
     def _load_all_logos():
-        with open('logo.csv') as csv_file:
+        with open('data/logo.csv') as csv_file:
             csv_reader = csv.reader(csv_file, delimiter=',')
             for i in csv_reader:
                 yield dict(company=i[0], logo=i[1])
@@ -116,24 +114,3 @@ class Stock:
             profit_loss += stock_yeild['profit_in_usd']
 
         return dict(quantity=round(quantity, 2), value=round(value, 2), profit_loss=round(profit_loss, 2))
-
-
-"""
-get_stock_data():
-{'_id': '111e6c5af2254e2585b03dfbdb51bf91', 'full_name': 'NVIDIA Corporation', 'stock_symbol': 'NVDA', 'shares': 12.0, 'purchase_price': 334.0, 'net_buy_price': 4008.0}
-
-get_yield_of_single_stock()
-{'symbol': 'NVDA', 'profit_in_ usd': 730.44, 'profit_prec': 18.22, 'total_value': 4738.44}
-
-get_total()
-{'quantity': 12.0, 'value': 4008.0, 'profit_loss': 730.44}
-"""
-
-# a = Stock('nvda', 23, 23)
-# print(a.logos)
-# print(a.get_logo_url('AMZN'))
-
-# Stock.remove_from_mongo('127b787a4c284e688587bad87e94dd3c')
-
-# a = Stock('nvda', 12, 12)
-# print(a.get_logo_url('AMZN'))

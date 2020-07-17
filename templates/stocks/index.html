@@ -1,135 +1,134 @@
 {% extends "base.html" %} {% block content %}
 
 
-{% if stocks|length > 0 %}
-<section id="stocks-table">
-    <table class="highlight">
-        <thead class="thead-dark">
-        <tr>
-            <th scope="col"></th>
-            <th scope="col">Stock</th>
-            <th scope="col">Quantity</th>
-            <th scope="col">Value ($)</th>
-            <th scope="col">Profit/Loss ($)</th>
-            <th scope="col">Change from buy (%)</th>
-            <th scope="col" class="action">Action</th>
-        </tr>
-        </thead>
+    {% if stocks|length > 0 %}
+        <section id="stocks-table">
+        <table class="highlight">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col"></th>
+                <th scope="col">Stock</th>
+                <th scope="col">Quantity</th>
+                <th scope="col">Value ($)</th>
+                <th scope="col">Profit/Loss ($)</th>
+                <th scope="col">Change from buy (%)</th>
+                <th scope="col" class="action">Action</th>
+            </tr>
+            </thead>
 
-        {% for stock in stocks %}
-        <tbody>
-        <tr class="content-row">
-            {% set stock_data = stock.get_stock_data() %} {% set stock_yield = Stock.get_yield_of_single_stock(stock) %}
-            {% set profit_prec = stock_yield['profit_prec'] %} {% set profit_in_usd = stock_yield['profit_in_usd'] %}
+            {% for stock in stocks %}
+                <tbody>
+                <tr class="content-row">
+                    {% set stock_data = stock.get_stock_data() %} {% set stock_yield = Stock.get_yield_of_single_stock(stock) %}
+                    {% set profit_prec = stock_yield['profit_prec'] %} {% set profit_in_usd = stock_yield['profit_in_usd'] %}
 
-            <td><img class="responsive-img" src='{{ stock_data["logo"] }}' alt=""/></td>
-            <td>{{ stock_data['full_name'] }}</td>
-            <td>{{ stock_data['shares'] }}</td>
-            <td>{{ stock_yield['total_value'] }}</td>
+                    <td><img class="responsive-img" src='{{ stock_data["logo"] }}' alt=""/></td>
+                    <td>{{ stock_data['full_name'] }}</td>
+                    <td>{{ stock_data['shares'] }}</td>
+                    <td>{{ stock_yield['total_value'] }}</td>
 
-            <td class="val">{{ '$+' + profit_in_usd|string if profit_in_usd > 0 else '$' + profit_in_usd|string }}</td>
-            <td class="val">{{ '+' + profit_prec|string + '%' if profit_prec > 0 else profit_prec|string + '%'}}</td>
+                    <td class="val">{{ '$+' + profit_in_usd|string if profit_in_usd > 0 else '$' + profit_in_usd|string }}</td>
+                    <td class="val">{{ '+' + profit_prec|string + '%' if profit_prec > 0 else profit_prec|string + '%' }}</td>
 
-            <form class="del_form" action="remove_stock" method="POST">
-                <input type="hidden" name="stock_id" value="{{ stock_data['_id'] }}"/>
-                <td class="val">
-                    <button id="delete-btn" type="submit" action="remove_stock">
-                        <i class="material-icons prefix icon-red">delete</i>
-                    </button>
-                </td>
-            </form>
-        </tr>
-        </tbody>
-        {% endfor %}
+                    <form class="del_form" action="remove_stock" method="POST">
+                        <input type="hidden" name="stock_id" value="{{ stock_data['_id'] }}"/>
+                        <td class="val">
+                            <button id="delete-btn" type="submit" action="remove_stock">
+                                <i class="material-icons prefix icon-red">delete</i>
+                            </button>
+                        </td>
+                    </form>
+                </tr>
+                </tbody>
+            {% endfor %}
 
 
-        <tr class="table-info blue-grey darken-3 total">
-            <td></td>
-            <td>Total</td>
-            <td>{{ total.quantity }}</td>
-            <td>{{ total.value }}</td>
-            <td class="val">{{ '$+' + total.profit_loss|string if total.profit_loss > 0 else '$' +
+            <tr class="table-info blue-grey darken-3 total">
+                <td></td>
+                <td>Total</td>
+                <td>{{ total.quantity }}</td>
+                <td>{{ total.value }}</td>
+                <td class="val">{{ '$+' + total.profit_loss|string if total.profit_loss > 0 else '$' +
                 total.profit_loss|string }}
-            </td>
-            <td>-</td>
-            <td></td>
-        </tr>
+                </td>
+                <td>-</td>
+                <td></td>
+            </tr>
 
-    </table>
+        </table>
 
     {% else %}
-    <blockquote>
-        <h1 class="col s12 m10 offset-m1">Add stocks to start</h1>
-    </blockquote>
+        <blockquote>
+            <h1 class="col s12 m10 offset-m1">Add stocks to start</h1>
+        </blockquote>
 
 
     {% endif %}
 
-    <!-- Modal Trigger -->
+<!-- Modal Trigger -->
 
-    <div class="section right-align">
-        <button data-target="modal1" class="btn modal-trigger section">Add stock</button>
-    </div>
+<div class="section right-align">
+    <button data-target="modal1" class="btn modal-trigger section">Add stock</button>
+</div>
 
-    <!-- Modal Structure -->
-    <div id="modal1" class="modal">
-        <div class="modal-content">
-            <div class="modal-dialog" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title">Add new stock</h5>
-                    </div>
-                    <div class="modal-body">
-                        <section class="create-stock-form container">
-                            <form action="add_stock" method="post">
-                                <div class="row">
-                                    <div class="col s12">
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <i class="material-icons prefix">show_chart</i>
-                                                {{ form.stock_symbol.label() }} {{
-                                                form.stock_symbol(class="autocomplete") }}
-                                            </div>
+<!-- Modal Structure -->
+<div id="modal1" class="modal">
+    <div class="modal-content">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Add new stock</h5>
+                </div>
+                <div class="modal-body">
+                    <section class="create-stock-form container">
+                        <form action="add_stock" method="post">
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">show_chart</i>
+                                            {{ form.stock_symbol.label() }} {{ form.stock_symbol(class="autocomplete") }}
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="row">
-                                    <div class="col s12">
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <i class="material-icons prefix">attach_money</i>
-                                                {{ form.purchase_price.label() }} {{ form.purchase_price() }}
-                                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">attach_money</i>
+                                            {{ form.purchase_price.label() }} {{ form.purchase_price() }}
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="row">
-                                    <div class="col s12">
-                                        <div class="row">
-                                            <div class="input-field col s12">
-                                                <i class="material-icons prefix">bookmark_border</i>
-                                                {{ form.num_of_shares.label() }} {{ form.num_of_shares() }}
-                                            </div>
+                            <div class="row">
+                                <div class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">bookmark_border</i>
+                                            {{ form.num_of_shares.label() }} {{ form.num_of_shares() }}
                                         </div>
                                     </div>
                                 </div>
+                            </div>
 
-                                <div class="modal-footer">
-                                    <button type="button" class="modal-close waves-effect waves-green btn-flat"
-                                            href="#!" data-dismiss="modal">Close
-                                    </button>
-                                    <button type="submit" class="btn">
-                                        Create
-                                    </button>
-                                </div>
-                            </form>
-                        </section>
-                    </div>
+                            <div class="modal-footer">
+                                <button type="button" class="modal-close waves-effect waves-green btn-flat"
+                                        href="#!" data-dismiss="modal">Close
+                                </button>
+                                <button type="submit" class="btn">
+                                    Create
+                                </button>
+                            </div>
+                        </form>
+                    </section>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </section>
 {% endblock content %}

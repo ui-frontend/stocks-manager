@@ -5,7 +5,6 @@ app = Flask(__name__)
 
 app.config['SECRET_KEY'] = '6c9a0af7a220762b3ec7d435b3ff14a4'
 
-
 app.register_blueprint(stocks_blueprint, url_prefix='/stocks')
 
 if __name__ == '__main__':
