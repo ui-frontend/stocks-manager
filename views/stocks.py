@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request, redirect, url_for
+from flask import Blueprint, render_template, request, redirect, url_for, flash
 from models.stock import Stock
 from forms.forms import RegistrationsForm, AddStockForm, LoginForm
 
@@ -34,10 +34,18 @@ def remove_stock():
 @stocks_blueprint.route('/register', methods=['POST', 'GET'])
 def register():
     form = RegistrationsForm()
-    return render_template('stocks/register.html', form=form)
+    if form.validate_on_submit():
+        flash('Account created, you can log in now', 'success')
+        return redirect(url_for('stocks.login'))
+    else:
+        return render_template('stocks/register.html', form=form)
 
 
 @stocks_blueprint.route('/login', methods=['POST', 'GET'])
 def login():
     form = LoginForm()
     return render_template('stocks/login.html', form=form)
+
+@stocks_blueprint.route('/about', methods=['POST', 'GET'])
+def about():
+    return render_template('stocks/about.html')

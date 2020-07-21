@@ -22,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
 $(document).ready(function () {
     $('input.autocomplete').autocomplete({
         data: {
@@ -1061,4 +1060,9 @@ $(document).ready(function () {
 
         }
     });
+});
+
+
+$(window).on("load", function () {
+    $(".loader-wrapper").fadeOut("slow");
 });

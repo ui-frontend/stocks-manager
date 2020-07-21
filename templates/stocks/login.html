@@ -1,23 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
 
-    <div class="card login-form-card center-align">
-        <div class="row register-form">
+    <div class="card login-form-card center-align z-depth-3">
+        <div class="row login-form">
 
             <form>
-                <section class="form-head"></section>
-                <h1 class="center-align">Login</h1>
-                <h6 class="center-align">Don't have an account? <a href="">Register</a></h6>
-                <hr>
-                <div class="row col s12">
+                <section class="form-head">
+                    <h1 class="center-align">Login</h1>
+                    <h6 class="center-align">Don't have an account? <a href="{{ url_for('stocks.register') }}">Register
+                        here</a>
+                    </h6>
+                    <hr>
+                </section>
+
 
                     <div class="row">
                         <div class="input-field col s12">
                             <input id="email" type="email" class="validate"/>
-                            <label for="email">Email</label>
+                            <label for="email">Email/Username</label>
                         </div>
                     </div>
-
 
                     <div class="row">
                         <div class="input-field col s12">
@@ -26,10 +28,18 @@
                         </div>
                     </div>
 
-                    <a id="login-btn" class="waves-effect waves-light btn">Login</a>
-                </div>
-        </form>
 
-    </div>
+                    <div class="row right-align">
+                        <div class="input-field col s12">
+                            <label>
+                                <input type="checkbox"/>
+                                <span>Remember me?</span>
+                            </label>
+                            {{ form.submit(class="waves-effect waves-light btn", id="login-btn") }}
+                        </div>
+                    </div>
+            </form>
+
+        </div>
     </div>
 {% endblock content %}

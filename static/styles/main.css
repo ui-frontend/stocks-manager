@@ -11,7 +11,12 @@ td.val.g {
 }
 
 img {
+    width: 16%;
+}
+
+.preloader-wrapper {
     width: 16%
+
 }
 
 i.icon-red {
@@ -63,17 +68,14 @@ td {
 
 
 .register-form-card {
-    margin-right: 350px;
-    margin-left: 350px;
-    height: 690px;
-
-
+    margin-right: 420px;
+    margin-left: 420px;
+    /*display: inline-block;*/
 }
 
 .login-form-card {
-    margin-right: 350px;
-    margin-left: 350px;
-    height: 468px;
+    margin-right: 420px;
+    margin-left: 420px;
 }
 
 
@@ -87,7 +89,6 @@ hr {
 }
 
 .card {
-    /*background: #e3dcdf;*/
     background: rgba(255, 255, 255, 0.95);
     border-radius: 9px;
 }
@@ -97,13 +98,31 @@ hr {
     margin-top: 50px;
 }
 
+.login-form {
+    margin-top: 50px;
+}
+
 #stocks-table {
     margin-top: 50px;
 }
 
 #login-btn {
-    width: 400px;
+    width: 200px;
+    color: white;
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
 }
+
+#register-btn {
+    color: white;
+    padding: 0;
+    border: none;
+    background: none;
+    outline: none;
+}
+
 
 table {
     border-collapse: separate;
@@ -120,3 +139,48 @@ table {
 .form-head {
     padding-top: 1px;
 }
+
+.about {
+    padding-top: 1px;
+    margin-right: 350px;
+    margin-left: 350px;
+    height: 690px;
+    margin-top: 50px;
+}
+
+
+.loader-wrapper {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /*background-color: rgb(36, 47, 63);*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.loader {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    border: 4px solid #Fff;
+    animation: loader 2s infinite ease;
+}
+
+#loading {
+    width: 100%;
+}
+
+thead {
+    height: 120px;
+}
+
+#loading {
+    display: none;
+}
+
+
