@@ -24,5 +24,5 @@ class User:
         UserDatabase.insert(self.collection, self.get_user_data())
 
 
-user = User('tomeros', '5869', 'tomeros@gmail.com')
+user = User('Adi', '651465', 'adi@gmail.com')
 user.save_to_mongo()

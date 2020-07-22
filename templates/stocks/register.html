@@ -1,4 +1,5 @@
-{% extends "base.html" %} {% block content %}
+{% extends "base.html" %}
+{% block content %}
 
     <div class="card register-form-card center-align z-depth-3">
         <div class="row register-form">
@@ -47,13 +48,11 @@
                 <div class="row">
                     <div class="input-field col s12">
                         {{ form.confirm_password.label }}
-                        {% if form.confirm_password.errors %}
-                            {% for error in form.confirm_password.errors %}
-                                {{ form.confirm_password.label }}
-                                {{ form.confirm_password(class="validate invalid") }}
-                                <span class="helper-text invalid" data-error="{{ error }}"></span>
-                            {% endfor %}
 
+                        {% if form.confirm_password.errors %}
+                            {{ form.confirm_password.label }}
+                            {{ form.confirm_password(class="validate invalid") }}
+                            <span class="helper-text invalid" data-error="{{ form.confirm_password.errors.0 }}"></span>
                         {% else %}
                             {{ form.confirm_password.label(class="validate") }}
                             {{ form.confirm_password }}
@@ -87,7 +86,6 @@
                     </div>
                 </div>
             </form>
-
         </div>
     </div>
 

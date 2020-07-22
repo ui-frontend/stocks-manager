@@ -10,8 +10,8 @@ td.val.g {
     color: #00b35c;
 }
 
-img {
-    width: 16%;
+#stock-img {
+    width: 40px;
 }
 
 .preloader-wrapper {
@@ -68,14 +68,14 @@ td {
 
 
 .register-form-card {
-    margin-right: 420px;
-    margin-left: 420px;
+    margin-right: 390px;
+    margin-left: 390px;
     /*display: inline-block;*/
 }
 
 .login-form-card {
-    margin-right: 420px;
-    margin-left: 420px;
+    margin-right: 390px;
+    margin-left: 390px;
 }
 
 
@@ -107,7 +107,7 @@ hr {
 }
 
 #login-btn {
-    width: 200px;
+    width: 58px;
     color: white;
     padding: 0;
     border: none;
@@ -142,10 +142,9 @@ table {
 
 .about {
     padding-top: 1px;
-    margin-right: 350px;
-    margin-left: 350px;
-    height: 690px;
     margin-top: 50px;
+    margin-right: 390px;
+    margin-left: 390px;
 }
 
 
@@ -183,4 +182,6 @@ thead {
     display: none;
 }
 
-
+.success {
+    color: #a7e640;
+}

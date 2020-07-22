@@ -28,7 +28,6 @@ class Stock:
         for logo in self.logos:
             if logo['company'] == stock_symbol:
                 return logo['logo']
-
         return 'https://cdn2.iconfinder.com/data/icons/growth-bar-vol-3/512/41-512.png'
 
     def _add_stock(self, stock_symbol) -> Dict:
