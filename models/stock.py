@@ -113,3 +113,8 @@ class Stock:
             profit_loss += stock_yeild['profit_in_usd']
 
         return dict(quantity=round(quantity, 2), value=round(value, 2), profit_loss=round(profit_loss, 2))
+
+
+#
+# nvda = Stock('NVDA', 342, 2345)
+# nvda.save_to_mongo()

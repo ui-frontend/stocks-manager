@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7f6c87a-af6c-4b95-bd0d-a812818c470a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/templatesBAK/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/stocks protfolio manager.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/stocks protfolio manager.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/forms/forms.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/models/stock.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/stock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/styles/materialize.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/styles/materialize.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/stocks/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stocks/about.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/stocks/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stocks/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/stocks/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stocks/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/stocks/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/stocks/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/main.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/styles/materialize.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/stocks/about.html" beforeDir="false" afterPath="$PROJECT_DIR$/templatesBAK/stocks/about.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/stocks/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templatesBAK/stocks/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/stocks/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/templatesBAK/stocks/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/stocks/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/templatesBAK/stocks/register.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/stocks.py" beforeDir="false" afterPath="$PROJECT_DIR$/views/stocks.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,13 +47,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/views/stocks.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templatesBAK/stocks/index.html" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/models/stock.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/forms/forms.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/templates/stocks/index.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/templatesBAK/base.html" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/models/user.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/views/stocks.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/templates/base.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -77,24 +76,24 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/models" />
     <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/models" />
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/templates/stocks" />
+      <recent name="$PROJECT_DIR$/templates" />
+      <recent name="$PROJECT_DIR$/views" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/templates/stocks" />
       <recent name="$PROJECT_DIR$/static/img" />
       <recent name="$PROJECT_DIR$/data" />
       <recent name="$PROJECT_DIR$/models" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/static/styles" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/models" />
-      <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/static/styles" />
-      <recent name="$PROJECT_DIR$/templates" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -155,15 +154,15 @@
       <method v="2" />
     </configuration>
     <configuration name="stock" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="yfinance" />
+      <module name="stocks protfolio manager" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="$PROJECT_DIR$/venv/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/models" />
-      <option name="IS_MODULE_SDK" value="true" />
+      <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
@@ -246,10 +245,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.stock" />
         <item itemvalue="Python.user" />
         <item itemvalue="Python.play" />
         <item itemvalue="Python.test_links" />
-        <item itemvalue="Python.stock" />
       </list>
     </recent_temporary>
   </component>
@@ -275,7 +274,8 @@
       <workItem from="1594756480963" duration="1333000" />
       <workItem from="1594798683701" duration="1311000" />
       <workItem from="1594800676623" duration="40203000" />
-      <workItem from="1595142477924" duration="33907000" />
+      <workItem from="1595142477924" duration="35822000" />
+      <workItem from="1595444341814" duration="28583000" />
     </task>
     <servers />
   </component>
@@ -387,11 +387,11 @@
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/stocks_protfolio_manager$stock.coverage" NAME="stock Coverage Results" MODIFIED="1594570976711" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
+    <SUITE FILE_PATH="coverage/stocks_protfolio_manager$stock.coverage" NAME="stock Coverage Results" MODIFIED="1595939722243" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/stocks_protfolio_manager$play.coverage" NAME="play Coverage Results" MODIFIED="1594840128593" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stocks_protfolio_manager$user.coverage" NAME="user Coverage Results" MODIFIED="1595351680626" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/models" />
     <SUITE FILE_PATH="coverage/stocks_protfolio_manager$codecs.coverage" NAME="codecs Coverage Results" MODIFIED="1594330754353" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="/Library/Frameworks/Python.framework/Versions/3.8/lib/python3.8" />
-    <SUITE FILE_PATH="coverage/stocks_protfolio_manager$app.coverage" NAME="app Coverage Results" MODIFIED="1595414869884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/stocks_protfolio_manager$app.coverage" NAME="app Coverage Results" MODIFIED="1595939791820" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/stocks_protfolio_manager$forms.coverage" NAME="forms Coverage Results" MODIFIED="1594287074028" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/forms" />
     <SUITE FILE_PATH="coverage/stocks_protfolio_manager$test_links.coverage" NAME="test_links Coverage Results" MODIFIED="1594637783621" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
