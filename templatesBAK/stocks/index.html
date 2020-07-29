@@ -38,14 +38,11 @@
 
                         <form class="del_form" action="remove_stock" method="POST">
                             <input type="hidden" name="stock_id" value="{{ stock_data['_id'] }}"/>
-
-                            <td class="val">
                                 <button id="delete-btn" onclick="$('#loading').show(), $('#delete').hide();"
                                         type="submit"
                                         action="remove_stock">
                                     <i id="delete" class="material-icons prefix icon-red">delete</i>
                                 </button>
-                            </td>
                         </form>
                     </tr>
                 </tbody>
