@@ -169,22 +169,15 @@
 }
 
 #email {
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
 #password {
-  -webkit-box-shadow: none;
   box-shadow: none;
 }
 
-#name {
-  -webkit-box-shadow: none;
-  box-shadow: none;
-}
 
-#password-1 {
-  -webkit-box-shadow: none;
+#confirm-password {
   box-shadow: none;
 }
 

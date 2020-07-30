@@ -4,7 +4,7 @@ import yfinance as yf
 from wallstreet import Stock as WS
 from pprint import pprint
 from typing import Dict, List
-from common.database import StockDatabase
+from common.mongo_stock_db import StockDatabase
 
 
 class Stock:
@@ -113,5 +113,3 @@ class Stock:
             profit_loss += stock_yeild['profit_in_usd']
 
         return dict(quantity=round(quantity, 2), value=round(value, 2), profit_loss=round(profit_loss, 2))
-
-

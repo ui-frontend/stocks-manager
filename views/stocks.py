@@ -5,23 +5,23 @@ from forms.forms import RegistrationsForm, AddStockForm, LoginForm
 
 stocks_blueprint = Blueprint('stocks', __name__)
 
+# @stocks_blueprint.route('/table', methods=['GET', 'POST'])
+# def index():
+#     pass
 
 @stocks_blueprint.route('/table', methods=['GET', 'POST'])
 def table():
     stocks = Stock.get_all_stocks()
     total = Stock.get_total()
     form = AddStockForm()
-    return render_template('stocks/table.html', stocks=stocks, Stock=Stock, total=total, form=form)
-
-
-@stocks_blueprint.route('/add_stock', methods=['POST'])
-def add_stock():
     if request.method == 'POST':
         stock_symbol = request.form['stock_symbol']
         num_of_shares = request.form['num_of_shares']
         purchase_price = request.form['purchase_price']
         Stock(stock_symbol, num_of_shares, purchase_price).save_to_mongo()
+        flash(f'{stock_symbol.upper()} stock was added successfully', 'alert-success')
         return redirect(url_for('stocks.table'))
+    return render_template('stocks/table.html', stocks=stocks, Stock=Stock, total=total, form=form)
 
 
 @stocks_blueprint.route('/remove_stock', methods=['POST'])
@@ -39,7 +39,7 @@ def register():
         email = request.form['email']
         password = request.form['password']
         User(email, password).save_to_mongo()
-        flash('Account created, you can log in now', 'success')
+        flash('Account created, you can log in now', 'alert-success')
         return redirect(url_for('stocks.login'))
     else:
         return render_template('stocks/register.html', form=form)
@@ -49,11 +49,12 @@ def register():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        if form.username.data == 'a' and form.password.data == 'a':
-            flash('Login Success', 'success')
-            return redirect(url_for('stocks.index'))
-        # else:
-        #     flash('Wrong')
+        if form.email.data == 'admin@gmail.com' and form.password.data == 'admin@gmail.com':
+            flash('Logged in successfully', 'alert-success')
+            return redirect(url_for('stocks.table'))
+        else:
+            flash('Log in failed', 'alert-danger')
+
     return render_template('stocks/login.html', form=form)
 
 

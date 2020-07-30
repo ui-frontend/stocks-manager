@@ -113,3 +113,11 @@ td.val.g {
 .form-group {
     margin-bottom: 25px;
 }
+
+#confirm-password {
+    box-shadow: none;
+}
+
+.alert-success{
+    display: inline-block;
+}

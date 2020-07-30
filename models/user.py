@@ -1,5 +1,5 @@
 import uuid
-from common.database import UserDatabase
+from common.mongo_stock_db import UserDatabase
 
 
 class User:
