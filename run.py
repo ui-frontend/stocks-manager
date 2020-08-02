@@ -1,5 +1,5 @@
 from app import app
-from app.routs.routes import stocks_blueprint
+from app.routes.routes import stocks_blueprint
 
 app.register_blueprint(stocks_blueprint, url_prefix='/stocks')
 

@@ -121,3 +121,11 @@ td.val.g {
 .alert-success{
     display: inline-block;
 }
+
+.alert-danger {
+    display: inline-block;
+}
+
+.block-heading {
+    margin-top: 40px;
+}

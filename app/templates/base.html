@@ -26,21 +26,34 @@
                         Toggle navigation
                     </span>
                     <span
-                        class="navbar-toggler-icon"></span>
+                            class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navcol-1">
+
                     <ul class="nav navbar-nav ml-auto">
-                        <li class="nav-item" role="presentation" style="padding-right: 4px;">
-                            <a class="nav-link text-capitalize" href="{{ url_for('stocks.register') }}" style="color: rgba(255,255,255,0.9);">
-                                Register
-                            </a>
-                        </li>
-                        <li class="nav-item" role="presentation" style="padding-right: 4px;">
-                            <a class="nav-link text-capitalize text-white" href="{{ url_for('stocks.login') }}">
-                                Login
-                            </a>
-                        </li>
+                        {% if current_user.is_authenticated %}
+
+                            <li class="nav-item" role="presentation" style="padding-right: 4px;">
+                                <a class="nav-link text-capitalize text-white" href="{{ url_for('stocks.logout') }}">
+                                    Logout
+                                </a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item" role="presentation" style="padding-right: 4px;">
+                                <a class="nav-link text-capitalize" href="{{ url_for('stocks.register') }}"
+                                   style="color: rgba(255,255,255,0.9);">
+                                    Register
+                                </a>
+                            </li>
+
+                            <li class="nav-item" role="presentation" style="padding-right: 4px;">
+                                <a class="nav-link text-capitalize text-white" href="{{ url_for('stocks.login') }}">
+                                    Login
+                                </a>
+                            </li>
+                        {% endif %}
                     </ul>
+
                 </div>
             </div>
         </nav>

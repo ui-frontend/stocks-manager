@@ -30,27 +30,24 @@
                                 </tr>
                             </thead>
 
-                            {% for stock in stocks %} {% set stock_data = stock.get_stock_data() %}
+                            {% for stock in stocks %}
                                 {% set stock_yield = Stock.get_yield_of_single_stock(stock) %}
                                 {% set profit_prec = stock_yield['profit_prec'] %}
                                 {% set profit_in_usd = stock_yield['profit_in_usd'] %}
 
                                 <tbody style="background-color: #fffaf6;">
                                     <tr class="text-nowrap myDIV">
-                                        <td style="width: 20px;" id="stock-img-td"><img id="stock-img"
-                                                                                        src="{{ stock_data["logo"] }}"
-                                                                                        alt=""/></td>
-                                        <td class="text-uppercase">{{ stock_data['stock_symbol'] }}</td>
-                                        <td>{{ stock_data['full_name'] }}</td>
-                                        <td>{{ stock_data['shares'] }}</td>
+                                        <td style="width: 20px;" id="stock-img-td"><img id="stock-img" src="{{ stock.logo }}" alt=""/></td>
+                                        <td class="text-uppercase">{{ stock.stock_symbol }}</td>
+                                        <td>{{ stock.full_name }}</td>
+                                        <td>{{ stock.shares }}</td>
                                         <td>{{ stock_yield['total_value'] }}</td>
                                         <td class="val">{{ '$+' + profit_in_usd|string if profit_in_usd > 0 else '$' + profit_in_usd|string }}</td>
                                         <td class="val">{{ '+' + profit_prec|string + '%' if profit_prec > 0 else profit_prec|string + '%' }}</td>
 
                                         <td>
                                             <form class="del_form" action="remove_stock" method="POST">
-                                                <input type="hidden" name="stock_id" value="{{ stock_data['_id'] }}"/>
-
+                                                <input type="hidden" name="stock_id" value="{{ stock.id }}"/>
                                                 <button id="trash-btn">
                                                     <i class="fa fa-trash"></i>
                                                 </button>
@@ -134,3 +131,6 @@
         </div>
     </div>
 {% endblock content %}
+
+
+

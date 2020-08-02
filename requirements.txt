@@ -6,3 +6,4 @@ flask
 flask-bcrypt
 pymongo
 email-validator
+flask-login

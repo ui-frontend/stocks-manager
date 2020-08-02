@@ -6966,7 +6966,7 @@ $jscomp.polyfill = function (e, r, p, m) {
     // Textarea Auto Resize
     var hiddenDiv = $('.hiddendiv').first();
     if (!hiddenDiv.length) {
-      hiddenDiv = $('<div class="hiddendiv common"></div>');
+      hiddenDiv = $('<div class="hiddendiv database"></div>');
       $('body').append(hiddenDiv);
     }
 
