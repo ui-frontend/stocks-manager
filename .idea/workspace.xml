@@ -2,28 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a7f6c87a-af6c-4b95-bd0d-a812818c470a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/database/database.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/mongo_stock_db.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/common/user_db.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/forms/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/forms/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/play.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/stock.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/stock.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/user.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routs/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routs/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routs/stocksBAK.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/assets/css/untitled.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/assets/css/untitled.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/materialize.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/materialize.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/stocks/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/stocks/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/stocks/table.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/stocks/table.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/site.db" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/site.database" beforeDir="false" afterPath="$PROJECT_DIR$/app/site.database" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/main.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -57,14 +38,13 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/app/templates/stocks/index.html" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/app/routes/routes.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/app/models/stock.py" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/app/forms/forms.py" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/app/templates/base.html" root0="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/test.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/app/models/stock_info.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/forms/forms.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/app/routes/routes.py" root0="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/run.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app/templates/base.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app/templates/stocks/index.html" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/app/models/stock.py" root0="SKIP_INSPECTION" />
   </component>
   <component name="IgnoredFileRootStore">
     <option name="generatedRoots">
@@ -92,19 +72,19 @@
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/app" />
-      <recent name="$PROJECT_DIR$/static" />
-      <recent name="$PROJECT_DIR$/templates/stocks" />
-      <recent name="$PROJECT_DIR$/static/img" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/models" />
       <recent name="$PROJECT_DIR$/templates/stocks" />
       <recent name="$PROJECT_DIR$/templates" />
       <recent name="$PROJECT_DIR$/views" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/app" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/templates/stocks" />
+      <recent name="$PROJECT_DIR$/static/img" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -246,12 +226,12 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Flask server.stocks protfolio manager" />
       <item itemvalue="Python.app" />
-      <item itemvalue="Python.test" />
-      <item itemvalue="Python.user" />
       <item itemvalue="Python.database" />
       <item itemvalue="Python.stock" />
+      <item itemvalue="Python.test" />
+      <item itemvalue="Python.user" />
+      <item itemvalue="Flask server.stocks protfolio manager" />
     </list>
     <recent_temporary>
       <list>
